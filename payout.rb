@@ -8,12 +8,17 @@ require 'nokogiri'
 # Variables #
 #############
 
+# Tax
+taxpercent = 5
 
 # The in file we're going to ingest
 infile = ARGV[0]
 
+# Work Directory
+workdir = File.dirname(__FILE__)
+
 # Our YAML file containing our item ids for the api
-itemfile = "/adm/scripts/payout/items.yml"
+itemfile = "#{workdir}/items.yml"
 items    = YAML::load_file(itemfile)
 
 # Our empty Array
@@ -21,9 +26,6 @@ data  = Hash.new(0)
 
 # Url we're using our API
 url = 'http://api.eve-central.com/api/marketstat'
-
-# Tax
-taxpercent = 10 
 
 #############
 # Functions #
