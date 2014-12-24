@@ -79,7 +79,7 @@ begin
 
   # Load the file into an array
   if File.exists?(infile) == true
-    array = %x[cat #{infile}].split("\n")
+    array = File.read(infile).split("\n")
   else
     exit 1
   end
